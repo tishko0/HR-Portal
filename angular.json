@@ -17,31 +17,36 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:application",
 					"options": {
-						"outputPath": "dist/hr-portal",
-						"index": "src/index.html",
-						"browser": "src/main.ts",
-						"polyfills": [
-							"zone.js"
-						],
-						"tsConfig": "tsconfig.app.json",
-						"inlineStyleLanguage": "scss",
-						"assets": [
-							"src/favicon.ico",
-							"src/assets"
-						],
-						"styles": [
-							"src/styles.scss",
-              "node_modules/igniteui-angular/styles/igniteui-angular.css"
-						],
-						"scripts": [
-							"./node_modules/hammerjs/hammer.min.js"
-						],
-						"stylePreprocessorOptions": {
-							"includePaths": [
-								"node_modules"
-							]
-						}
-					},
+            "outputPath": "dist/hr-portal",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@infragistics/igniteui-angular/styles/igniteui-angular.css"
+            ],
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            },
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
+          },
 					"configurations": {
 						"production": {
 							"budgets": [
@@ -121,6 +126,9 @@
 		}
 	},
 	"cli": {
-	  "schematicCollections": ["@angular-eslint/schematics"]
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ],
+    "analytics": false
 	}
 }
